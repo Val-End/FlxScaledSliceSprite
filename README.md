@@ -45,13 +45,13 @@ Perfect for games with a UI scale setting (e.g., **Minecraft-style**), where you
 ## Installation
 
 ```bash
-haxelib  install  flxscaledslicesprite
+haxelib install flxscaledslicesprite
 ```
 
 Or if using GitHub:
 
 ```bash
-haxelib  git  flxscaledslicesprite  https://github.com/TracedInPurple/FlxScaledSliceSprite.git
+haxelib git flxscaledslicesprite https://github.com/TracedInPurple/FlxScaledSliceSprite.git
 ```
 
 ---
