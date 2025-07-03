@@ -1,0 +1,15 @@
+{
+  "name": "flxscaledslicesprite",
+  "url": "https://github.com/tracedinpurple/flxscaledslicesprite",
+  "license": "MIT",
+  "tags": ["flixel", "ui", "sprite", "scale"],
+  "description": "An extension to the FlxSliceSprite class that adds scaling support.",
+  "version": "0.0.1",
+  "releasenote": "Initial Release",
+  "contributors": ["TracedInPurple"],
+  "dependencies": {
+    "flixel": "",
+    "openfl": ""
+  },
+  "classPath": "src"
+}
