@@ -64,7 +64,7 @@ import tracedinpurple.ui.FlxScaledSliceSprite;
   
 
 // Load your graphic and slice settings
-var asset = Paths.image("ui/box");
+var asset = "assets/ui/box";
 var slice = new  FlxRect(3,  3,  10,  10);
   
 
