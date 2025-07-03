@@ -36,9 +36,9 @@ Perfect for games with a UI scale setting (e.g., **Minecraft-style**), where you
 
 - Supports custom dimensions or auto-sizing
 
-- deal for scalable GUIs or pixel-perfect UIs
+- Ideal for scalable GUIs or pixel-perfect UIs
 
-- Built by a HaxeFlixel user for HaxeFlixel users
+- Built by a HaxeFlixel user for HaxeFlixel users :3
 
 ---
 
