@@ -65,7 +65,7 @@ import tracedinpurple.ui.FlxScaledSliceSprite;
 
 // Load your graphic and slice settings
 var asset = "assets/ui/box";
-var slice = new  FlxRect(3,  3,  10,  10);
+var slice = new FlxRect(3,  3,  10,  10);
   
 
 // Create the scaled slice sprite
@@ -98,3 +98,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Font
 
 Extremely cool font created by Qrafty | Check their [Ko-Fi](https://ko-fi.com/post/qraftium-FONT-N4N81DJKV5) here!
+
+---

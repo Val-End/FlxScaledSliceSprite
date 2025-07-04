@@ -8,16 +8,16 @@ import openfl.display.BitmapData;
 import openfl.geom.Matrix;
 
 /**
- * Small extension to FlxSliceSprite 
- * Simply allows you to scale the Texture you want to slice instead of loading a *bigger* version of said texture
- * Despite having a very niche use it works great if you're woring with a GUI/UI scale (Minecraft for example)
+ * Small extension to FlxSliceSprite.
+ * Simply allows you to scale the Texture you want to slice instead of loading a *bigger* version of said texture.
+ * Despite having a very niche use it works great if you're working with a GUI/UI scale (Minecraft for example)
  */
 class FlxScaledSliceSprite extends FlxSliceSprite 
 {
     /**
-        @param asset Graphic you want to slice
+        @param asset The FlxGraphic you want to slice
         @param baseSliceRect Rectangle that defines the slice grid
-        @param scaleMult Scales the bitmap of your original graphic
+        @param scaleMult A multiplier which will scale your FlxGraphic
         @param width The width of your slice object
         @param height The height of your slice object
     **/
@@ -49,7 +49,7 @@ class FlxScaledSliceSprite extends FlxSliceSprite
         super(scaledGraphic, scaledSliceRect, width, height);
     }
     /**
-        Quick and Easy (Lazy) Function to stretch all Elements of the Sprite
+        Quick and Easy *(Lazy)* Function to stretch all Elements of the Sprite
     **/
     public function stretchAll():Void
     {
