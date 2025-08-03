@@ -69,7 +69,7 @@ var slice = new FlxRect(3,  3,  10,  10);
   
 
 // Create the scaled slice sprite
-var scaledSprite = new FlxScaledSliceSprite(asset, slice, 2);
+var scaledSprite = new FlxScaledSliceSprite(asset, slice, 2, 200, 100);
 add(scaledSprite);
 ```
 
