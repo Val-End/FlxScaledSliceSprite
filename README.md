@@ -58,19 +58,31 @@ haxelib git flxscaledslicesprite https://github.com/TracedInPurple/FlxScaledSlic
 
 ## Usage
 
+This creates a new sliced sprite which has its bitmap scaled by 2x.
+
 ```haxe
 
 import tracedinpurple.ui.FlxScaledSliceSprite;
   
 
 // Load your graphic and slice settings
-var asset = "assets/ui/box";
+var asset = "assets/ui/box.png";
 var slice = new FlxRect(3,  3,  10,  10);
   
 
 // Create the scaled slice sprite
 var scaledSprite = new FlxScaledSliceSprite(asset, slice, 2, 200, 100);
 add(scaledSprite);
+```
+
+When modifying the width and height of the sliced sprite, use `updateSlicedHitbox`.
+
+```haxe
+
+scaledSprite.width = 300;
+
+scaledSprite.updateSlicedHitbox();
+
 ```
 
 Need to stretch all borders?  

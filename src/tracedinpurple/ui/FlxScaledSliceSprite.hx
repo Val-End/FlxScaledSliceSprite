@@ -49,6 +49,8 @@ class FlxScaledSliceSprite extends FlxSliceSprite
 		if (height <= 0) height = scaledBitmap.height;
 
 		super(scaledGraphic, scaledSliceRect, width, height);
+
+		updatedSlicedHitbox();
 	}
 	/**
 		Quick and Easy *(Lazy)* Function to stretch all Elements of the Sprite
@@ -56,5 +58,15 @@ class FlxScaledSliceSprite extends FlxSliceSprite
 	public function stretchAll():Void
 	{
 		stretchLeft = stretchTop = stretchRight = stretchBottom = stretchCenter = true;
+	}
+
+	/**
+		Updates the new hitbox of the sliced sprite.
+		Usually good to call after resizing the sprite.
+	**/
+	public function updatedSlicedHitbox() {
+		updateFramePixels(); // not sure if necessary but i'll keep it on for now
+		updateHitbox();
+		offset.set(0,0);
 	}
 }
