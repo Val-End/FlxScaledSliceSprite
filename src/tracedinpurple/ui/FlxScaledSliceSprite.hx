@@ -14,45 +14,47 @@ import openfl.geom.Matrix;
  */
 class FlxScaledSliceSprite extends FlxSliceSprite 
 {
-    /**
-        @param asset The FlxGraphic you want to slice
-        @param baseSliceRect Rectangle that defines the slice grid
-        @param scaleMult A multiplier which will scale your FlxGraphic
-        @param width The width of your slice object
-        @param height The height of your slice object
-    **/
-    public function new(asset:FlxGraphic, baseSliceRect:FlxRect, scaleMult:Int = 1, width:Float = -1, height:Float = -1) 
-    {
-        // Load the original bitmap/graphic
-        var rawGraphic = FlxG.bitmap.add(asset);
-        var originalBitmap = rawGraphic.bitmap;
+	/**
+		@param asset Graphic you want to slice
+		@param baseSliceRect Rectangle that defines the slice grid
+		@param scaleMult Scales the bitmap of your original graphic
+		@param width The width of your slice object
+		@param height The height of your slice object
 
-        var scaledBitmap = new BitmapData(originalBitmap.width * scaleMult, originalBitmap.height * scaleMult, true, 0x0);
-        var matrix = new Matrix(scaleMult, 0, 0, scaleMult); // it works so i won't touch it lol
-        scaledBitmap.draw(originalBitmap, matrix);
+		Call `updateSlicedHitbox()` whenver you change the width or height of the sprite!
+	**/
+	public function new(asset:FlxGraphic, baseSliceRect:FlxRect, scaleMult:Int = 1, width:Float = -1, height:Float = -1) 
+	{
+		// Load the original bitmap/graphic
+		var rawGraphic = FlxG.bitmap.add(asset);
+		var originalBitmap = rawGraphic.bitmap;
 
-        // Add the upscaled bitmap to the cache
-        var scaledGraphic = FlxG.bitmap.add(scaledBitmap);
+		var scaledBitmap = new BitmapData(originalBitmap.width * scaleMult, originalBitmap.height * scaleMult, true, 0x0);
+		var matrix = new Matrix(scaleMult, 0, 0, scaleMult); // it works so i won't touch it lol
+		scaledBitmap.draw(originalBitmap, matrix);
 
-        // Scale the slice rect accordingly
-        var scaledSliceRect = new FlxRect(
-            baseSliceRect.x * scaleMult,
-            baseSliceRect.y * scaleMult,
-            baseSliceRect.width * scaleMult,
-            baseSliceRect.height * scaleMult
-        );
+		// Add the upscaled bitmap to the cache
+		var scaledGraphic = FlxG.bitmap.add(scaledBitmap);
 
-        // If no width/height are provided, use native scaled size
-        if (width <= 0) width = scaledBitmap.width;
-        if (height <= 0) height = scaledBitmap.height;
+		// Scale the slice rect accordingly
+		var scaledSliceRect = new FlxRect(
+			baseSliceRect.x * scaleMult,
+			baseSliceRect.y * scaleMult,
+			baseSliceRect.width * scaleMult,
+			baseSliceRect.height * scaleMult
+		);
 
-        super(scaledGraphic, scaledSliceRect, width, height);
-    }
-    /**
-        Quick and Easy *(Lazy)* Function to stretch all Elements of the Sprite
-    **/
-    public function stretchAll():Void
-    {
-        stretchLeft = stretchTop = stretchRight = stretchBottom = stretchCenter = true;
-    }
+		// If no width/height are provided, use native scaled size
+		if (width <= 0) width = scaledBitmap.width;
+		if (height <= 0) height = scaledBitmap.height;
+
+		super(scaledGraphic, scaledSliceRect, width, height);
+	}
+	/**
+		Quick and Easy *(Lazy)* Function to stretch all Elements of the Sprite
+	**/
+	public function stretchAll():Void
+	{
+		stretchLeft = stretchTop = stretchRight = stretchBottom = stretchCenter = true;
+	}
 }
